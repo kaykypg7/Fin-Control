@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: gastos-app-db
+    environment:
+      POSTGRES_DB: gastos_app
+      POSTGRES_USER: gastos_app
+      POSTGRES_PASSWORD: gastos_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - gastos_app_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gastos_app"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  gastos_app_pgdata:
