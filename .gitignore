@@ -15,6 +15,11 @@ frontend/.vite/
 *.iml
 .vscode/
 
+# AI agent skill tooling (local dev aid, unrelated to the app)
+.agents/
+.claude/
+skills-lock.json
+
 # Env
 .env
 .env.local

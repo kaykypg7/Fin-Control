@@ -1,0 +1,18 @@
+# Config do Fly.io para o backend. Gerado manualmente (sem `fly launch`) para casar com
+# o Dockerfile e as variaveis de ambiente ja existentes (DB_URL, DB_USERNAME, DB_PASSWORD,
+# JWT_SECRET, ALLOWED_ORIGINS - todas via `fly secrets set`, nunca commitadas aqui).
+app = "gastos-app-backend"
+primary_region = "gru"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

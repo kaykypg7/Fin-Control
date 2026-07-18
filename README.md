@@ -3,7 +3,7 @@
 Aplicação de controle de gastos pessoais com tela de administração, responsiva para desktop
 (sidebar) e mobile (bottom navigation).
 
-> Quer colocar no ar de graça? Veja o [guia de deploy](DEPLOY.md) (Supabase + Render + Vercel).
+> Quer colocar no ar de graça? Veja o [guia de deploy](DEPLOY.md) (Supabase + Fly.io + Vercel).
 
 ## Funcionalidades
 
