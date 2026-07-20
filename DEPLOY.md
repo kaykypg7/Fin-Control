@@ -106,3 +106,18 @@ banco no Supabase.
 
 Suficiente e sobrando para um projeto pessoal de controle de gastos — e sem cadastrar
 cartão de crédito em lugar nenhum.
+
+## Melhoria futura: eliminar o delay de "acordar"
+
+Decisão consciente por enquanto: aceitar o delay de ~30-50s do Render (sem cartão) em vez
+de plataformas sempre-ligadas. Se isso incomodar no dia a dia, as opções já avaliadas para
+revisitar são:
+
+- **Fly.io**: configurar `min_machines_running = 1` no `fly.toml` mantém o backend sempre
+  ligado, sem delay nenhum. Exige CLI (`flyctl`) e cartão cadastrado (sem cobrança dentro
+  do free tier).
+- **Google Cloud Run**: também escala a zero por padrão, mas o cold-start é mais rápido
+  (~5-15s vs ~30-50s do Render). Exige cartão cadastrado.
+
+Nenhuma plataforma testada oferece "sempre ligado + de graça + sem cartão" ao mesmo tempo
+— é um trade-off inerente do mercado de free tiers.
